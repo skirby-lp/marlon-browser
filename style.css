@@ -105,12 +105,28 @@ button:active{
 }
   
 
+@media only screen and (max-width: 662px){
+    #container{
+        height: auto;
+        width: auto;
+    }
+    #send-btn{
+        width: 400px;
+        height: 50px;
+        border-radius: 10px;
+    }
+    #input {
+        border-radius: 10px;
+        height: 40px;
+    }
+}
+
 #container{
     margin: auto;
     margin-top: 200px;
-    height: 400px !important; 
-    width: 700px !important; 
-    min-height: 400px !important;
+    height: 400px; 
+    max-width: 700px; 
+    /* min-height: 400px !important; */
     overflow: scroll;
     padding-top: 10px;
     border-top: 3px dotted #005EF4;
@@ -125,7 +141,7 @@ button:active{
 } */
 
 #clear-btn,
-#submit-btn{
+#send-btn{
     text-align: center;
 }
 
