@@ -109,6 +109,7 @@ button:active{
     #container{
         height: auto;
         width: auto;
+        margin-top: 100px !important;
     }
     #send-btn{
         width: 400px;
@@ -119,6 +120,7 @@ button:active{
         border-radius: 10px;
         height: 40px;
     }
+    
 }
 
 #container{
@@ -145,6 +147,11 @@ button:active{
     text-align: center;
 }
 
+#send-btn:active{
+    background-color: #005EF4 !important;
+    box-shadow: 0px 0px 5px #005EF4;
+}
+
 .lp-json-pollock-layout-vertical{
     margin-left: 15px;
 }
@@ -152,6 +159,7 @@ button:active{
 .lp-json-pollock-layout{
     border: none !important;
     border-radius: 10px;
+    margin-bottom: 25px;
     background-color: #1D1F52 !important;
 }
 

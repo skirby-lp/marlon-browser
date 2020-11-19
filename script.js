@@ -8,12 +8,15 @@ function clearChildren(node){
 
 let message;
 let spinner = document.getElementById("spinner");
+let inputBar = document.getElementById("input");
+
 setInterval(function(){
 	message = document.getElementsByClassName("msg");
 	console.log("msgs length: " + message.length);
 
 	if(message.length !== 0){
 		spinner.remove();
+		inputBar.removeAttribute("disabled");
 		clearInterval();
 	}
 }, 50);
@@ -52,8 +55,8 @@ window.onload = function(){
 	}
 
 	$("#send-btn").on('click', function(){
-		input = $('#input').val();
-		console.log("Length: " + input.length());
+		var input = $('#input').val();
+		//console.log("Length: " + input.length());
 		if(input.length > 0){
 			submitMsg(input);
 			$('#input').val("");
@@ -64,9 +67,11 @@ window.onload = function(){
 	// Enter a message 
 	$('#input').keypress(function (e) {
 		if (e.which == 13) {
-			input = $('#input').val();
-			submitMsg(input);
-			$('#input').val("");
+			var input = $('#input').val();
+			if(input.length > 0){
+				submitMsg(input);
+				$('#input').val("");
+			}
 		}
 	});
 }
