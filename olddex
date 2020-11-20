@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <title>Marlon Pollock Testing</title>
+        <script type="text/javascript" src="jQuery.js" ></script>
+        <script type="text/javascript" src="pollock.js"></script>
+        <script type="text/javascript" src="windowKit.js"></script>
+        <link rel="stylesheet" href="style.css">
+        
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://raw.githubusercontent.com/LivePersonInc/messaging-window-sdk/master/message-window.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="d-flex align-items-center justify-content-center">
+                <div>
+                    <div id="container">
+                        <div id="test" class="pull-right">
+                            chest
+                        </div>
+                        <!-- this is where text messages go -->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div>
+            <input class="form-control" placeholder="Enter text" id="input" >
+        </div>
+
+        <div>
+            <button id="submit-btn" class="btn btn-primary">Send</button>
+        </div>
+
+        <div>
+            <button id="clear-btn" class="btn btn-secondary">Clear</button>
+        </div>
+
+    </body>
+    <script defer type="text/javascript" src="script.js"></script>
+</html>
