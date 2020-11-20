@@ -42,6 +42,7 @@ html{
 body {
     margin: 0px;
     max-width: 100%;
+    padding-bottom: 100px;
 }
 
 #topbar {
@@ -109,7 +110,7 @@ button:active{
     #container{
         height: 400 !important;
         width: auto;
-        margin-top: 0px !important;
+        margin-top: 10px !important;
     }
     #send-btn{
         width: 300px;
@@ -132,7 +133,6 @@ button:active{
     overflow: scroll;
     padding-top: 10px;
     border-top: 3px dotted #005EF4;
-
     border-radius: 2px;
 }
 

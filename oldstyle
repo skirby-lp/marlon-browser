@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
+.font{
+    font-family: 'Roboto Slab', serif
+}
+
+.consumerText{
+    box-shadow: 2px 2px 5px lightblue;
+    line-height: 100%;
+    clear: both;
+    
+    display: block;
+    margin-left: auto;
+
+
+    position: relative;
+    background: lightblue;
+    -webkit-border-radius: 11px;
+    -moz-border-radius: 11px;
+    border-radius: 11px;
+    float: right;
+    text-align: left;
+}
+
+#test {
+    background: greenyellow;
+}
+
+.agentText {
+    box-shadow: 2px 2px 5px greenyellow;
+    line-height: 100%;
+    clear: both;
+    display: block;
+    position: relative;
+    padding: 5px 5px 5px 5px;
+    background: greenyellow;
+    -webkit-border-radius: 11px;
+    -moz-border-radius: 11px;
+    border-radius: 11px;
+    margin-bottom: 1em;
+    max-width: 300px;
+}
+
+.innerConsumer {
+    margin: 5px 5px 5px 5px;
+    text-align: right;
+}
+
+#container{
+    margin-top: 200px; 
+    border: 1px 
+    lightgray solid;  
+    height: 400px !important; 
+    width: 800px !important; 
+    min-height: 400px !important;
+    overflow: scroll;
+}
