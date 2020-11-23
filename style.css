@@ -105,7 +105,8 @@ button:active{
 
 @media only screen and (max-width: 662px){
     #container{
-        margin-top: 10px !important;
+        margin: 0 !important;
+        height: 75% !important;
     }
     #send-btn{
         width: 300px;
@@ -116,17 +117,17 @@ button:active{
         border-radius: 10px;
         height: 40px;
     }
-    /* .media-query-container {
+    .media-query-container {
         height: 900px;
         max-height: 500px !important;
-    } */
+    }
     
 }
 
 #container{
     margin: auto;
     margin-top: 200px;
-    max-height: 400px; 
+    height: 400px;
     max-width: 700px; 
     /* min-height: 400px !important; */
     overflow: scroll;
