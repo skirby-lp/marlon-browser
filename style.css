@@ -117,8 +117,7 @@ button:active{
         height: 40px;
     }
     .media-query-container {
-        max-height: 900px !important;
-        height: 900px !important;
+        height: 900px;
     }
     
 }
@@ -126,7 +125,7 @@ button:active{
 #container{
     margin: auto;
     margin-top: 200px;
-    max-height: 500px; 
+    max-height: 400px; 
     max-width: 700px; 
     /* min-height: 400px !important; */
     overflow: scroll;
