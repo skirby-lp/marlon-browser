@@ -117,7 +117,7 @@ button:active{
         height: 40px;
     }
     .media-query-container {
-        height: 900px;
+        margin: auto;
     }
     
 }
