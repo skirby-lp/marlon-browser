@@ -8,9 +8,6 @@ div {
     font-family: 'Roboto Slab';
 }
 
-html{
-    overflow: hidden;
-}
 
 .get-started-btn{
     border-radius: 20px !important; 
@@ -41,7 +38,6 @@ html{
 
 body {
     margin: 0px;
-    max-width: 100%;
     padding-bottom: 100px;
 }
 
@@ -101,6 +97,7 @@ button:active{
 
 .msg{
     max-width: 50%;
+    word-wrap: break-word;
     padding: 5px 10px 5px 10px;
     border-radius: 10px;
 }
@@ -108,8 +105,6 @@ button:active{
 
 @media only screen and (max-width: 662px){
     #container{
-        height: 400 !important;
-        width: auto;
         margin-top: 10px !important;
     }
     #send-btn{
@@ -121,13 +116,16 @@ button:active{
         border-radius: 10px;
         height: 40px;
     }
+    .media-query-container {
+        height: 40%;
+    }
     
 }
 
 #container{
     margin: auto;
     margin-top: 200px;
-    height: 400px; 
+    max-height: 400px; 
     max-width: 700px; 
     /* min-height: 400px !important; */
     overflow: scroll;

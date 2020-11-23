@@ -43,6 +43,12 @@ $("#clear-btn").click(function(){
 
 
 
+$('#input').focus( function() {
+	$('#container').addClass('media-query-container');
+});
+
+
+
 var fadeDuration = 100;
 
 window.onload = function(){
