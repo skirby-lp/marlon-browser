@@ -116,10 +116,10 @@ button:active{
         border-radius: 10px;
         height: 40px;
     }
-    .media-query-container {
+    /* .media-query-container {
         height: 900px;
         max-height: 500px !important;
-    }
+    } */
     
 }
 
