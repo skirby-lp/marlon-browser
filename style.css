@@ -38,7 +38,8 @@ div {
 
 body {
     margin: 0px;
-    padding-bottom: 100px;
+    max-height: 1080px;
+    margin-bottom: 0px !important;
 }
 
 #topbar {
@@ -109,7 +110,7 @@ button:active{
     }
     #container{
         margin: 0 !important;
-        height: 75% !important;
+        height: 40% !important;
     }
     #send-btn{
         width: 300px;
@@ -121,8 +122,7 @@ button:active{
         height: 40px;
     }
     .media-query-container {
-        height: 900px;
-        max-height: 500px !important;
+        height: 600px;
     }
     
 }
@@ -132,7 +132,6 @@ button:active{
     margin-top: 200px;
     height: 400px;
     max-width: 700px; 
-    /* min-height: 400px !important; */
     overflow: scroll;
     padding-top: 10px;
     border-top: 3px dotted #005EF4;

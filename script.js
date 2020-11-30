@@ -43,9 +43,9 @@ $("#clear-btn").click(function(){
 
 
 
-$('#input').focus( function() {
-	$('#container').addClass('media-query-container');
-});
+// $('#input').focus( function() {
+// 	$('#container').addClass('media-query-container');
+// });
 
 
 
