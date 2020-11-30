@@ -110,7 +110,7 @@ button:active{
     }
     #container{
         margin: 0 !important;
-        height: 40% !important;
+        height: 30%;
     }
     #send-btn{
         width: 300px;
@@ -122,7 +122,7 @@ button:active{
         height: 40px;
     }
     .media-query-container {
-        height: 600px;
+        height: 500px !important;
     }
     
 }
