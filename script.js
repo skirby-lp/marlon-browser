@@ -59,6 +59,14 @@ $('#input').focus( function() {
 
 });
 
+$('#send-btn').focus( function(){
+	$('#container').addClass('media-query-container');
+});
+
+$('#send-btn').focusout(function(){
+	$('#container').removeClass('media-query-container');
+});
+
 $('#input').blur(function(){
 	updateScroll();
 });
@@ -83,6 +91,15 @@ window.onload = function(){
 
 
 	$("#send-btn").on('click', function(){
+		var input = $('#input').val();
+		//console.log("Length: " + input.length());
+		if(input.length > 0){
+			submitMsg(input);
+			$('#input').val("");
+		}
+	});
+
+	$("#send-btn").focus(function(){
 		var input = $('#input').val();
 		//console.log("Length: " + input.length());
 		if(input.length > 0){
