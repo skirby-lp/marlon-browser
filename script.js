@@ -53,14 +53,21 @@ setInterval(function(){
 ///////
 // Updates the scroll when the user focuses on the input field
 $('#input').focus( function() {
-	updateScroll();
 	$('#container').addClass('media-query-container');
 	console.log('focus in');
+	updateScroll();
+
+});
+
+$('#input').blur(function(){
+	updateScroll();
 });
 
 $('#input').focusout(function(){
 	$('#container').removeClass('media-query-container');
 	console.log('focus out');
+	updateScroll();
+
 });
 
 
