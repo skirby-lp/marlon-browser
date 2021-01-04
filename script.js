@@ -1,15 +1,48 @@
 
+
+
+var urlParams = new URLSearchParams(window.location.search);
+var skillId = urlParams.get('skill');
+console.log("Skill ID: " + skillId)
+
+
+var fadeDuration = 100;
+// fadeDuration is how long the messages take to fade in on send
+let message;
+// message is a temporary variable that is only used to detect the first message from Marlon to remove the loading screen
+let spinner = document.getElementById("spinner");
+// spinner is the loading screen
+let inputBar = document.getElementById("input");
+// inputBar is the input field used only in setInterval
+var windowKit = new windowKit({
+	account: 82400935,
+	// Site Lerman Zohar skill
+	skillId: skillId
+	//2520998330
+});
+// windowKit is the SDK used for appending messages in JSON Pollock format
+
+
+// clearChildren is for testing purposes, the 'clear' messages button is currently disabled
 function clearChildren(node){
 	node.innerHTML = "";
 }
+$("#clear-btn").click(function(){
+	console.log('Cleared console')
+	clearChildren(document.getElementById("container"))
+});
 
+// updateScroll sends the scroll bar to the bottom
+function updateScroll(){
+	var chatHistory = document.getElementById("container");
+	chatHistory.scrollTop = chatHistory.scrollHeight;
+}
 
-// loading screen quickmaffs
-
-let message;
-let spinner = document.getElementById("spinner");
-let inputBar = document.getElementById("input");
-
+/////////////
+// Loading Screen
+//
+// setting an interval to check if the first user message has appeared
+// if it appears, remove the loading screen and clear the interval.
 setInterval(function(){
 	message = document.getElementsByClassName("msg");
 	console.log("msgs length: " + message.length);
@@ -22,29 +55,36 @@ setInterval(function(){
 }, 50);
 
 
+///////
+// Updates the scroll when the user focuses on the input field
+$('#input').focus( function() {
+	$('#container').addClass('media-query-container');
+	console.log('focus in');
+	updateScroll();
+
+});
+
+$('#send-btn').focus( function(){
+	$('#container').addClass('media-query-container');
+});
+
+$('#send-btn').focusout(function(){
+	$('#container').removeClass('media-query-container');
+});
+
+$('#input').blur(function(){
+	updateScroll();
+});
+
+$('#input').focusout(function(){
+	$('#container').removeClass('media-query-container');
+	console.log('focus out');
+	updateScroll();
+
+});
+
+
 // BELOW IS ALL LOADED BEFORE LAYOUT
-var windowKit = new windowKit({
-	account: 82400935,
-	// Site Lerman Zohar skill
-	skillId: 2520998330
-});
-
-
-$("#refresh").click(function(){
-	$.getScript("windowKit.js");
-	console.log('Refreshed windowkit');
-});
-
-
-$("#clear-btn").click(function(){
-	console.log('Cleared console')
-	clearChildren(document.getElementById("container"))
-});
-
-
-
-var fadeDuration = 100;
-
 window.onload = function(){
 	function submitMsg(msg){
 		var userMessage = '<div class="msg-container right">' + "<p class='msg'>" + msg + "</p>" + "</div>"
@@ -54,6 +94,7 @@ window.onload = function(){
 		updateScroll();
 	}
 
+
 	$("#send-btn").on('click', function(){
 		var input = $('#input').val();
 		//console.log("Length: " + input.length());
@@ -61,9 +102,18 @@ window.onload = function(){
 			submitMsg(input);
 			$('#input').val("");
 		}
-
-
 	});
+
+	$("#send-btn").focus(function(){
+		var input = $('#input').val();
+		//console.log("Length: " + input.length());
+		if(input.length > 0){
+			submitMsg(input);
+			$('#input').val("");
+		}
+	});
+
+
 	// Enter a message 
 	$('#input').keypress(function (e) {
 		if (e.which == 13) {
@@ -74,6 +124,7 @@ window.onload = function(){
 			}
 		}
 	});
+
 }
 
 
@@ -134,10 +185,6 @@ windowKit.onAgentTextEvent(function(text) {
 
 
 
-function updateScroll(){
-	var chatHistory = document.getElementById("container");
-	chatHistory.scrollTop = chatHistory.scrollHeight;
-}
 
 
 
