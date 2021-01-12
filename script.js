@@ -2,9 +2,24 @@
 
 
 var urlParams = new URLSearchParams(window.location.search);
-var skillId = urlParams.get('skill');
+var skillId = parseInt(urlParams.get('skill'));
+
+// skill ID for the run through skill ID
+
+var skills = {
+	runThroughBot: 2686266430,
+	lermanZohar: 2509171930,
+	lermanZoharSite: 2520998330,
+	queryBotA: 2688035330,
+	queryBotB: 2688035430,
+}
+
 console.log("Skill ID: " + skillId)
 
+// if the user never provided a skill id, we default to given skill. in this case, the runThroughBot.
+if(skillId === null || isNaN(skillId)){
+	skillId = skills['runThroughBot'];
+}
 
 var fadeDuration = 100;
 // fadeDuration is how long the messages take to fade in on send
@@ -20,6 +35,8 @@ var windowKit = new windowKit({
 	skillId: skillId
 	//2520998330
 });
+
+
 // windowKit is the SDK used for appending messages in JSON Pollock format
 
 
