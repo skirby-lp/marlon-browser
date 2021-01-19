@@ -12,13 +12,16 @@ var skills = {
 	lermanZoharSite: 2520998330,
 	queryBotA: 2688035330,
 	queryBotB: 2688035430,
+	errorBot: 2689859130,
+	customEventDemo: 2734341130,
+	lzPlayground: 2757292430,
 }
 
 console.log("Skill ID: " + skillId)
 
 // if the user never provided a skill id, we default to given skill. in this case, the runThroughBot.
 if(skillId === null || isNaN(skillId)){
-	skillId = skills['runThroughBot'];
+	skillId = skills[''];
 }
 
 var fadeDuration = 100;
@@ -45,7 +48,7 @@ function clearChildren(node){
 	node.innerHTML = "";
 }
 $("#clear-btn").click(function(){
-	console.log('Cleared console')
+	// console.log('Cleared console')
 	clearChildren(document.getElementById("container"))
 });
 
@@ -62,9 +65,11 @@ function updateScroll(){
 // if it appears, remove the loading screen and clear the interval.
 setInterval(function(){
 	message = document.getElementsByClassName("msg");
+	let loadingText = document.getElementById("loading-text");
 	console.log("msgs length: " + message.length);
 
 	if(message.length !== 0){
+		loadingText.remove();
 		spinner.remove();
 		inputBar.removeAttribute("disabled");
 		clearInterval();
@@ -73,7 +78,7 @@ setInterval(function(){
 
 
 ///////
-// Updates the scroll when the user focuses on the input field
+// Updates the scroll when the user focuses on the input field when the screen is small enough
 $('#input').focus( function() {
 	$('#container').addClass('media-query-container');
 	console.log('focus in');
@@ -103,13 +108,20 @@ $('#input').focusout(function(){
 
 // BELOW IS ALL LOADED BEFORE LAYOUT
 window.onload = function(){
-	function submitMsg(msg){
+	function submitMsg(msg, isSilent=false){
 		var userMessage = '<div class="msg-container right">' + "<p class='msg'>" + msg + "</p>" + "</div>"
-		$('#container').append($(userMessage).hide().fadeIn(fadeDuration));
+		// if the message is silent, it's sent without appearing on the user's screen.
+		if(!isSilent){
+			$('#container').append($(userMessage).hide().fadeIn(fadeDuration));
+		}
 		console.log('Candidate: ' + msg);
 		windowKit.sendMessage(msg);
 		updateScroll();
 	}
+
+	//// Here we send 'hi' silently to start the dialog to save loading speed.
+	// submitMsg('Hi!', true);
+	
 
 
 	$("#send-btn").on('click', function(){
