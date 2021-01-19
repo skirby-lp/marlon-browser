@@ -21,7 +21,7 @@ console.log("Skill ID: " + skillId)
 
 // if the user never provided a skill id, we default to given skill. 
 if(skillId === null || isNaN(skillId)){
-	skillId = skills['errorBot'];
+	skillId = skills['queryBotA'];
 }
 
 var fadeDuration = 100;
