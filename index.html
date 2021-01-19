@@ -2,6 +2,9 @@
   <head>
     <title>Marlon</title>
     <script type="text/javascript" src="jQuery.js" ></script>
+    <script type="text/javascript" src="pollock.js"></script>
+    <script type="text/javascript" src="windowKit.js"></script>
+
     <link rel="stylesheet" href="style.css">
     
 
@@ -16,7 +19,9 @@
 
   <body style="background-color: #1D1F52">
     <div id="topbar">
-      <img src="public/WhiteLPLogo.png" style="height: 3.5%;" alt="Failed to load"/>
+      <a href="index">
+        <img src="public/WhiteLPLogo.png" style="height: 3.5%;" alt="Failed to load"/>
+      </a>
     </div>
 
 
@@ -25,6 +30,7 @@
       <div style="font-weight: bold; font-size: 96;">
         Marlon
       </div>
+
 
       <div>
         <a href="/chat">
@@ -39,10 +45,6 @@
       </div>
 
 
-
-
-
-
     </div>
 
     <div class="font" style="font-size: 12px; position: fixed; bottom: 25px; color: white; text-align: center; width: 100%;">
@@ -50,5 +52,9 @@
     </div>
 
   </body>
+  <!-- We load the script here in the beginning to save on loading time, saves ~5 seconds out of the old total 8-10 seconds of loading time depending on
+  how long the user takes to type in the passcode. -->
+  <script defer type="text/javascript" src="script.js"></script>
+  <script type="text/javascript" src="clear_session.js"></script>
 
 </html>
