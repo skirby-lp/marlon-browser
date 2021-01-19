@@ -19,9 +19,9 @@ var skills = {
 
 console.log("Skill ID: " + skillId)
 
-// if the user never provided a skill id, we default to given skill. in this case, the runThroughBot.
+// if the user never provided a skill id, we default to given skill. 
 if(skillId === null || isNaN(skillId)){
-	skillId = skills[''];
+	skillId = skills['errorBot'];
 }
 
 var fadeDuration = 100;
@@ -32,6 +32,9 @@ let spinner = document.getElementById("spinner");
 // spinner is the loading screen
 let inputBar = document.getElementById("input");
 // inputBar is the input field used only in setInterval
+
+let loadingText = document.getElementById("loading-text");
+// loadingText is the 'Loading, please wait...'
 var windowKit = new windowKit({
 	account: 82400935,
 	// Site Lerman Zohar skill
@@ -63,9 +66,9 @@ function updateScroll(){
 //
 // setting an interval to check if the first user message has appeared
 // if it appears, remove the loading screen and clear the interval.
+
 setInterval(function(){
 	message = document.getElementsByClassName("msg");
-	let loadingText = document.getElementById("loading-text");
 	console.log("msgs length: " + message.length);
 
 	if(message.length !== 0){
