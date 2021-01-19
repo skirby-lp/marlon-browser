@@ -8,6 +8,25 @@ div {
     font-family: 'Roboto Slab';
 }
 
+.loading-text {
+    text-align: center !important;
+    font-size: 24px;
+    color: white;
+    margin-top: 24px;
+    display: block;
+    z-index: 5;
+}
+
+.input{
+    width: 33%;
+    background-color: #fff;
+    padding: 5;
+    font-size: 24px;
+    margin-bottom: 30px;
+    text-align: center;
+    border-radius: 10px;
+}
+
 
 .get-started-btn{
     border-radius: 20px !important; 
