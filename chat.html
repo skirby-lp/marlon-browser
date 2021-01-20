@@ -1,9 +1,12 @@
-<html>
+<!DOCTYPE html>
+<html lang="en-us">
     <head>
         <title>Marlon - Chat</title>
-        <script type="text/javascript" src="jQuery.js" ></script>
-        <script type="text/javascript" src="pollock.js"></script>
-        <script type="text/javascript" src="windowKit.js"></script>
+        <script src="jQuery.js" ></script>
+        <script src="pollock.js"></script>
+        <script src="windowKit.js"></script>
+        <script defer src="script.js"></script>
+
         
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, user-scalable=no">
@@ -17,9 +20,9 @@
     <body style="background-color: #1D1F52">
         <div id="topbar">
             <a href="index">
-              <img src="public/WhiteLPLogo.png" style="height: 3.5%;" alt="Failed to load"/>
+              <img src="public/WhiteLPLogo.png" style="width: 15%;" alt="LivePerson"/>
             </a>
-        </div>
+          </div>
 
         <div class="wrapper" id="container">
             <span id="loading-text" class="loading-text">
@@ -33,15 +36,13 @@
 
 
         <div class="submit-container input-group mb-3">
-            <input id="input" disabled type="text" placeholder="..." aria-label="..." aria-describedby="button-addon2" style="width: 700px; border-top-left-radius: 10px; border-bottom-left-radius: 10px; border: none; padding-left: 15px;">
+            <input id="input" disabled type="text" placeholder="..." aria-label="..." aria-describedby="send-btn" style="width: 700px; border-top-left-radius: 10px; border-bottom-left-radius: 10px; border: none; padding-left: 15px;">
             <div class="input-group-append">
-                <button id="send-btn" class="btn btn-primary" type="button" id="button-addon2">
-                    <img src="public/icons/arrow-right.svg" style="fill: #fff"/>
+                <button id="send-btn" class="btn btn-primary" type="button">
+                    <img src="public/icons/arrow-right.svg" alt="Send" style="fill: #fff"/>
                 </button>
             </div>
         </div>
-
-
     </body>
-    <script defer type="text/javascript" src="script.js"></script>
+
 </html>

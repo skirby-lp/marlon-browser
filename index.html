@@ -1,9 +1,12 @@
-<html>
+<!DOCTYPE html>
+<html lang="en-us">
   <head>
     <title>Marlon</title>
-    <script type="text/javascript" src="jQuery.js" ></script>
-    <script type="text/javascript" src="pollock.js"></script>
-    <script type="text/javascript" src="windowKit.js"></script>
+    <script src="jQuery.js" ></script>
+    <script src="pollock.js"></script>
+    <script src="windowKit.js"></script>
+    <script defer src="script.js"></script>
+    <script src="clear_session.js"></script>
 
     <link rel="stylesheet" href="style.css">
     
@@ -20,21 +23,21 @@
   <body style="background-color: #1D1F52">
     <div id="topbar">
       <a href="index">
-        <img src="public/WhiteLPLogo.png" style="height: 3.5%;" alt="Failed to load"/>
+        <img src="public/WhiteLPLogo.png" style="width: 15%;" alt="LivePerson"/>
       </a>
     </div>
 
 
     <div class="container center-home" style="color: white;">
       
-      <div style="font-weight: bold; font-size: 96;">
+      <div style="font-weight: bold; font-size: 96px;">
         Marlon
       </div>
 
 
       <div>
         <a href="/chat">
-          <button type="button" class=" get-started-btn btn btn-primary" style="font-size: 24; text-transform: none; text-decoration: none; color: white"">
+          <button type="button" class=" get-started-btn btn btn-primary" style="font-size: 24px; text-transform: none; text-decoration: none; color: white">
             Get Started
           </button>
         </a>
@@ -54,7 +57,5 @@
   </body>
   <!-- We load the script here in the beginning to save on loading time, saves ~5 seconds out of the old total 8-10 seconds of loading time depending on
   how long the user takes to type in the passcode. -->
-  <script defer type="text/javascript" src="script.js"></script>
-  <script type="text/javascript" src="clear_session.js"></script>
 
 </html>
