@@ -22,7 +22,7 @@ console.log("Skill ID: " + skillId)
 
 // if the user never provided a skill id, we default to given skill. 
 if(skillId === null || isNaN(skillId)){
-	skillId = skills['sdeiRunthrough'];
+	skillId = skills['errorBot'];
 }
 
 var fadeDuration = 100;
