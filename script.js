@@ -18,10 +18,14 @@ var skills = {
 
 console.log("Skill ID: " + skillId)
 
+var userHasSkill = true 
 // if the user never provided a skill id, we default to given skill. 
-if(skillId === null || isNaN(skillId)){
+if(skillId === null || isNaN(skillId) || skillId === undefined){
 	skillId = skills['errorBot'];
+	userHasSkill = false
 }
+
+
 
 var fadeDuration = 100;
 // fadeDuration is how long the messages take to fade in on send
@@ -59,6 +63,34 @@ function updateScroll(){
 	var chatHistory = document.getElementById("container");
 	chatHistory.scrollTop = chatHistory.scrollHeight;
 }
+
+
+
+$("a").click(function(e){
+	e.preventDefault();
+	var a = $(this).attr('href');
+	var something = getUrlParameter('skill');
+	var newURL = a+"?skill="+something;
+	window.location.href = newURL;
+});
+
+
+var getUrlParameter = function getUrlParameter(sParam) {
+	var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+			sURLVariables = sPageURL.split('&'),
+			sParameterName,
+			i;
+
+	for (i = 0; i < sURLVariables.length; i++) {
+			sParameterName = sURLVariables[i].split('=');
+
+			if (sParameterName[0] === sParam) {
+					return sParameterName[1] === undefined ? true : sParameterName[1];
+			}
+	}
+};
+
+
 
 /////////////
 // Loading Screen
@@ -124,6 +156,9 @@ window.onload = function(){
 	//// Here we send 'hi' silently to start the dialog to save loading speed.
 	// submitMsg('Hi!', true);
 	
+	$("#get-started-btn").on('click', function(){
+
+	});
 
 
 	$("#send-btn").on('click', function(){
