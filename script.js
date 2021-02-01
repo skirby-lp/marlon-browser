@@ -15,13 +15,14 @@ var skills = {
 	errorBot: 2689859130,
 	customEventDemo: 2734341130,
 	lzPlayground: 2757292430,
+	sdeiRunthrough: 2981998930,
 }
 
 console.log("Skill ID: " + skillId)
 
 // if the user never provided a skill id, we default to given skill. 
 if(skillId === null || isNaN(skillId)){
-	skillId = skills['queryBotA'];
+	skillId = skills['sdeiRunthrough'];
 }
 
 var fadeDuration = 100;
