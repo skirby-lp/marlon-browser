@@ -10,8 +10,6 @@ var skills = {
 	runThroughBot: 2686266430,
 	lermanZohar: 2509171930,
 	lermanZoharSite: 2520998330,
-	queryBotA: 2688035330,
-	queryBotB: 2688035430,
 	errorBot: 2689859130,
 	customEventDemo: 2734341130,
 	lzPlayground: 2757292430,
