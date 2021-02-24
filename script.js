@@ -16,10 +16,16 @@ var skills = {
 	sdeiRunthrough: 2981998930,
 }
 
-console.log("Skill ID: " + skillId)
+// console.log("Skill ID: " + skillId)
 
 var userHasSkill = true 
 // if the user never provided a skill id, we default to given skill. 
+
+// fix for the SDE-1 bug on 2/24
+if(skillId == 2981998930){
+	skillId = 2985535830
+}
+
 if(skillId === null || isNaN(skillId) || skillId === undefined){
 	skillId = skills['errorBot'];
 	userHasSkill = false
@@ -100,7 +106,7 @@ var getUrlParameter = function getUrlParameter(sParam) {
 
 setInterval(function(){
 	message = document.getElementsByClassName("msg");
-	console.log("msgs length: " + message.length);
+	// console.log("msgs length: " + message.length);
 
 	if(message.length !== 0){
 		loadingText.remove();
@@ -115,7 +121,7 @@ setInterval(function(){
 // Updates the scroll when the user focuses on the input field when the screen is small enough
 $('#input').focus( function() {
 	$('#container').addClass('media-query-container');
-	console.log('focus in');
+	// console.log('focus in');
 	updateScroll();
 
 });
@@ -134,7 +140,7 @@ $('#input').blur(function(){
 
 $('#input').focusout(function(){
 	$('#container').removeClass('media-query-container');
-	console.log('focus out');
+	// console.log('focus out');
 	updateScroll();
 
 });
@@ -148,7 +154,7 @@ window.onload = function(){
 		if(!isSilent){
 			$('#container').append($(userMessage).hide().fadeIn(fadeDuration));
 		}
-		console.log('Candidate: ' + msg);
+		// console.log('Candidate: ' + msg);
 		windowKit.sendMessage(msg);
 		updateScroll();
 	}
@@ -194,28 +200,34 @@ window.onload = function(){
 }
 
 
+// notification sound
+var notification = new Audio('../public/notification_drip.wav');
+notification.volume = 0.05;
+
 //connect to LE
 windowKit.connect();
 
 //when the agent sends a rich content message
 windowKit.onAgentRichContentEvent(function(content) {
+	notification.play();
 	updateScroll();
-	console.log('ON AGENT RICH CONTENT EVENT STARTED');
+	// console.log('ON AGENT RICH CONTENT EVENT STARTED');
 	  //render the structured content using JsonPollock
-	console.log("JSON Pollock: " + content);
+	// console.log("JSON Pollock: " + content);
 	var structuredText = JsonPollock.render(content);
-	console.log("Structured text:", structuredText);
+	// console.log("Structured text:", structuredText);
 	  //append the results of the render to the DOM
 		$('#container').append($(structuredText).hide().fadeIn(fadeDuration));
 	  //next three rows create the same scrolling effect as above
 	  var botTextsSC = document.getElementsByClassName('lp-json-pollock');
 	  var latestSC = botTextsSC[botTextsSC.length - 1];
 	  //$('body, html').animate({ scrollTop: $(latestSC).offset().top }, 0);
-		console.log('Agent: ', structuredText);
+		// console.log('Agent: ', structuredText);
 		updateScroll();
 
 	  //when a user clicks on a structured content button
 	  $('.lp-json-pollock-element-button').on('click', function () {
+			notification.play();
 		  //grab the text of the button
 		  var scText = $(this).text();
 		  //send the text to LE for the bot to process
@@ -233,8 +245,10 @@ windowKit.onAgentRichContentEvent(function(content) {
 
 
 
+
 //when the agent sends a text message
 windowKit.onAgentTextEvent(function(text) {
+	notification.play();
 	console.log('ON AGENT TEXT EVENT');
 	//append the message's contents to the DOM
 	var agentMessage = '<div class="msg-container left">' +  "<p class='msg'>" + text + '</div>';
