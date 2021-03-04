@@ -5,7 +5,7 @@ var urlParams = new URLSearchParams(window.location.search);
 var skillId = parseInt(urlParams.get('skill'));
 
 if(urlParams.get('skill') == 'test'){
-  skillId = 2688035330;
+  skillId = 3087411630;
 }
 
 // skill ID for the run through skill ID
