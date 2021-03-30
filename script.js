@@ -23,7 +23,7 @@ var userHasSkill = true
 
 // fix for the SDE-1 bug on 2/24
 if(skillId == 2981998930){
-	skillId = 2985535830
+	skillId = 3084102430
 }
 
 if(skillId === null || isNaN(skillId) || skillId === undefined){
